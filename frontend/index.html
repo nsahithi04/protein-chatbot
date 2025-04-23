@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Protein Chatbot</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to ProteinBot!</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-header">
-      <h2>Protein Chatbot</h2>
-    </div>
-    <div class="chat-box" id="chat-box">
-      <div class="chat-message bot-message">
-        <p>Hi! I'm your Protein Chatbot. Ask me anything about proteins!</p>
-      </div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Ask me about any protein...">
-      <button onclick="sendMessage()">Send</button>
-    </div>
+  <div class="chat-container" style="text-align:center; padding: 50px 30px;">
+    <h1 style="color:#4db6ac; font-size:2.2em;">🌟 Meet ProteinBot!</h1>
+    <p style="font-size:1.2em;">Your friendly guide to all things protein!</p>
+    <img src="assets/protein-emoji.png" alt="Protein Emoji" width="100" style="margin: 20px auto;" />
+    <a href="chat.html">
+      <button style="padding: 12px 24px; font-size: 1.1em; border-radius: 12px; background-color: #7e57c2; color: white; border: none; cursor: pointer;">
+        🚀 Start Chatting
+      </button>
+    </a>
   </div>
-
-  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
