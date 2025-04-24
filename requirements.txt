@@ -1,4 +1,5 @@
-flask
-flask-cors
-flask-socketio
-requests
+Flask==2.2.5
+Flask-Cors==3.0.10
+Flask-SocketIO==5.3.6
+requests==2.31.0
+eventlet==0.33.3 

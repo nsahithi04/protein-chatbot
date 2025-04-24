@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProteinBot Chat</title>
+    <title>pepTalk!</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="chat-container">
-      <div class="chat-header">ProteinBot 💬</div>
+      <div class="chat-header">pepTalk! 💬</div>
       <div class="chat-box" id="chat-box">
         <div class="chat-message bot-message">
-          <p>👋 Hi! I'm ProteinBot. Ask me anything about proteins!</p>
+          <p>👋 Hi! I'm pepTalk!. Ask me anything about proteins!</p>
         </div>
       </div>
       <div class="chat-input">
@@ -26,5 +26,15 @@
 
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script src="script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://3Dmol.csb.pitt.edu/build/3Dmol.js"
+    ></script>
+
+    <script>
+      function viewStructure(uniprotId) {
+        window.open(`/structure_viewer.html?id=${uniprotId}`, "_blank");
+      }
+    </script>
   </body>
 </html>
