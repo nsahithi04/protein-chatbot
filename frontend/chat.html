@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pepTalk!</title>
+    <title>ProteinBot Chat</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="chat-container">
-      <div class="chat-header">pepTalk! 💬</div>
+      <div class="chat-header">
+        <h2>pepTalk 🧬</h2>
+      </div>
       <div class="chat-box" id="chat-box">
         <div class="chat-message bot-message">
-          <p>👋 Hi! I'm pepTalk!. Ask me anything about proteins!</p>
+          <p>Hi! I'm pepTalk. Ask me anything about proteins!</p>
         </div>
       </div>
       <div class="chat-input">
@@ -26,15 +28,34 @@
 
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script src="script.js"></script>
-    <script
-      type="text/javascript"
-      src="https://3Dmol.csb.pitt.edu/build/3Dmol.js"
-    ></script>
-
     <script>
-      function viewStructure(uniprotId) {
-        window.open(`/structure_viewer.html?id=${uniprotId}`, "_blank");
+      function sendMessage() {
+        const userInput = document.getElementById("user-input").value;
+        if (userInput.trim() === "") return;
+
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("chat-message", "user-message");
+        userMessage.innerHTML = `<p>${userInput}</p>`;
+        document.getElementById("chat-box").appendChild(userMessage);
+
+        socket.emit("user_message", userInput); // Send message to backend
+
+        document.getElementById("user-input").value = ""; // Clear input field
       }
+
+      // Listening for bot's response
+      const socket = io.connect("your-backend-server-url"); // Replace with your backend server URL
+
+      socket.on("bot_response", function (data) {
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message");
+        botMessage.innerHTML = `<p>${data.message}</p>`;
+        document.getElementById("chat-box").appendChild(botMessage);
+
+        // Scroll to the bottom of the chat
+        document.getElementById("chat-box").scrollTop =
+          document.getElementById("chat-box").scrollHeight;
+      });
     </script>
   </body>
 </html>

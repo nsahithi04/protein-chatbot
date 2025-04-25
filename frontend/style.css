@@ -1,77 +1,84 @@
+/* Global Styles */
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #e0f7fa, #e1bee7);
+  background: linear-gradient(
+    135deg,
+    #2a2d56,
+    #1f234d
+  ); /* Dark purple to dark blue gradient */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("assets/bg-pattern.svg");
-  background-repeat: repeat;
+  background-image: url("assets/starry-night.jpg"); /* Replace with a starry night image */
+  background-size: cover;
+  background-position: center;
 }
 
+/* Chat Section */
 .chat-container {
-  width: 480px; /* Increased width for more professional look */
-  background: #66a3ff;
+  width: 600px; /* Wider chat box */
+  height: 650px;
+  background: linear-gradient(
+    135deg,
+    #4a3a68b9,
+    #1f234db6
+  ); /* Dark purple to dark blue gradient */
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(41, 8, 78, 0.3);
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.6s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  border: 2px solid #481b69; /* Outlined box */
+  overflow: hidden;
 }
 
 .chat-header {
-  background: linear-gradient(90deg, #7e57c2, #4db6ac);
-  color: white;
-  padding: 15px;
+  background: linear-gradient(90deg, #481b69, #1e236b);
+  color: rgb(208, 202, 202);
+  padding: 16px;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: bold;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .chat-box {
   flex: 1;
   padding: 15px;
-  background: #fdfdfd;
-  overflow-y: auto; /* Ensures scrolling when content overflows */
-  max-height: 400px; /* Limits the height to ensure better layout */
+  background: #1f1f2f;
+  overflow-y: auto;
+  max-height: 460px;
+  border-bottom: 2px solid #481b69; /* Outline chat box */
+  word-wrap: break-word; /* Prevents text overflow */
 }
 
 .chat-message {
   margin-bottom: 12px;
   display: flex;
+  animation: fadeIn 0.5s ease;
 }
 
 .bot-message p {
-  background: #7e57c2;
-  color: white;
+  background: #481b69;
+  color: rgb(208, 202, 202);
   padding: 12px 16px;
   border-radius: 16px 16px 16px 0;
   max-width: 75%;
-  margin-left: auto;
-  animation: fadeIn 0.3s ease-in;
+  margin-right: auto;
+  margin-left: 10px;
 }
 
 .user-message p {
-  background: #eeeeee;
+  background: #1e236b;
+  color: white;
   padding: 12px 16px;
   border-radius: 16px 16px 0 16px;
   max-width: 75%;
-  margin-right: auto;
-  animation: fadeIn 0.3s ease-in;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 @keyframes fadeIn {
@@ -88,29 +95,69 @@ body {
 .chat-input {
   display: flex;
   padding: 12px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+  background-color: #333;
+  border-top: 2px solid #481b69;
 }
 
 .chat-input input {
   flex: 1;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 12px;
   font-size: 1em;
-  margin-right: 10px;
+  color: rgb(208, 202, 202);
+  background-color: #222;
+  transition: border-color 0.3s;
+}
+
+.chat-input input:focus {
+  border-color: #481b69;
 }
 
 .chat-input button {
-  background-color: #4db6ac;
-  color: white;
+  background-color: #481b69;
+  color: rgb(208, 202, 202);
   border: none;
   border-radius: 12px;
   padding: 10px 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: 10px;
 }
 
 .chat-input button:hover {
-  background-color: #00796b;
+  background-color: #1e236b;
+  transform: scale(1.1);
+  margin-left: 10px;
+}
+
+a {
+  color: rgb(208, 202, 202);
+}
+
+/* Typing animation */
+.typing-indicator {
+  color: #4c81cb;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: typing 1.5s steps(5, end) infinite;
+}
+
+@keyframes typing {
+  0% {
+    content: "typing";
+  }
+  25% {
+    content: "typing.";
+  }
+  50% {
+    content: "typing..";
+  }
+  75% {
+    content: "typing...";
+  }
+  100% {
+    content: "typing";
+  }
 }
