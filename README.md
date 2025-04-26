@@ -45,23 +45,25 @@ protein-chatbot/
 ├── backend/
 │   ├── app.py
 │   ├── parser.py
-│   ├── .env
-│   └── requirements.txt
 ├── frontend/
+│   ├── assets
+│   │  ├── bg-pattern.svg
+│   │  ├── protein-emoji.png
+│   │  └── starry-night.jpg
 │   ├── chat.html
-│   └── structure_viewer.html
+│   ├── index.html
+│   ├── indexstyle.css
+│   ├── script.js
+│   └── style.css
+├── .env
+└── requirements.txt
 ```
 
 ---
 
 ## 🔐 Environment Variables
 
-Create a `.env` file in the `backend/` directory:
-
-```env
-DISGENET_KEY=your_disgenet_api_key
-ALPHAFOLD_KEY=your_alphafold_api_key
-```
+Create a `.env` file in the `protein-chatbot` directory:
 
 > ⚠️ Make sure `.env` is in your `.gitignore` to prevent committing secrets.
 
@@ -76,15 +78,7 @@ cd backend
 python app.py
 ```
 
-### Option 2: Use Flask CLI
-
-```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
-```
-
-Then open your browser and go to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+Then open your browser and go to: [frontend/index.html]
 
 ---
 
@@ -93,20 +87,12 @@ Then open your browser and go to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 1. Enter a protein name or UniProt ID (e.g., `P69905` or `hemoglobin`)
 2. Type:
    - `structure` → view in AlphaFold
-   - `function`, `drugs`, `diseases`, `interactions`, `variants`, or `all`
+   - `function`, `drugs`, `diseases`, `interactions`, `variants`, `news`, or `all`
 
 ---
 
 ## ✨ Viewer Example
 
 3D structures are viewed using the AlphaFold link or embedded viewer powered by Mol\*.
-
----
-
-## 🛠 To Do
-
-- Embed full structure viewer with zoom using Mol\*
-- Add mutation visualization (WIP)
-- Improve error handling/UI feedback
 
 ---

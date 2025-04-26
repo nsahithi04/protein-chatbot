@@ -274,7 +274,7 @@ def handle_user_message(message):
 
     if user_input in ['variants', 'all']:
         variants = fetch_variants_clinvar(data, name)
-        msg_parts.append(f"<b>🧬 ClinVar Variants:</b><br>{'<br>• '.join(variants) if variants else 'N/A'}<br>")
+        msg_parts.append(f"<b>🧬 Variants:</b><br>{'<br>• '.join(variants) if variants else 'N/A'}<br>")
 
     if user_input in ['news', 'all']:
         msg_parts.append("<b>📰 Related News:</b><br>")
