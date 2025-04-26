@@ -4,7 +4,7 @@ This is a real-time chatbot application that allows users to explore information
 
 ---
 
-## 🚀 Features
+## Features
 
 - Real-time chatbot interface using Flask-SocketIO
 - Fetch protein info using UniProt
@@ -17,7 +17,7 @@ This is a real-time chatbot application that allows users to explore information
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 Install dependencies with:
 
@@ -38,7 +38,7 @@ eventlet
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 protein-chatbot/
@@ -61,7 +61,7 @@ protein-chatbot/
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the `protein-chatbot` directory:
 
@@ -69,7 +69,7 @@ Create a `.env` file in the `protein-chatbot` directory:
 
 ---
 
-## 🏃‍♀️ Running the App
+## Running the App
 
 ### Option 1: Run directly
 
@@ -82,7 +82,7 @@ Then open your browser and go to: [frontend/index.html]
 
 ---
 
-## 🧬 Example Query
+## Example Query
 
 1. Enter a protein name or UniProt ID (e.g., `P69905` or `hemoglobin`)
 2. Type:
@@ -91,7 +91,7 @@ Then open your browser and go to: [frontend/index.html]
 
 ---
 
-## ✨ Viewer Example
+## Viewer Example
 
 3D structures are viewed using the AlphaFold link or embedded viewer powered by Mol\*.
 
